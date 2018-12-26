@@ -16,6 +16,7 @@ header{
   grid-template-columns: 90% auto;
   align-items: center;
   padding: 0 1rem;
+  min-height: 10vh;
 }
 .side-nav{
   grid-area: 'side-nav'
@@ -25,10 +26,18 @@ header{
   padding:1rem;
   text-align: center;
 }
+.side-nav ul li{
+  border-bottom: 1px solid limegreen;
+  padding:0.5rem;
+  cursor: pointer;
+}
+.side-nav ul li:hover{
+  opacity:0.7;
+}
 
 footer{
   grid-area: footer;
-  min-height: 5rem;
+  min-height: 10vh;
 }
 .dark-blue{
   background-color: #282827;
