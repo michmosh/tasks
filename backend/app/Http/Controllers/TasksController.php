@@ -25,7 +25,7 @@ class TasksController extends Controller
 
     public function addTask(Request $request){
         $task = new Task();
-        $task->jsonData = $request->get('task')['jsonData'];
+        $task->fill($request->all());
         $task->save();
         return json_encode(array('task'=>$task));
     }
@@ -39,11 +39,8 @@ class TasksController extends Controller
 
     public function editTask(Request $request , $id){
         $task = Task::find($id);
-        $task->jsonData =  $request->get('task')['jsonData'];
-        $res = $task->update(['jsonData'=> $task->jsonData]);
-        return array(
-            'meta'=>json_decode(json_encode(["updated" => $res],true))
-        );
+        $res = $task->update($request->all());
+        return json_encode(array('task'=>$task));
     }
 }
 

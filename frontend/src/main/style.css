@@ -1,0 +1,36 @@
+.main{
+    grid-area: main;
+    min-height: 80vh;
+    background-color: #DCD8CF;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+:local(.list){
+    width:70%;
+}
+
+:local(.message){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+    height:15rem;
+    position: absolute;
+    top:50%; 
+    transform: translateY(50%);
+    left:50%;
+    transform: translateX(-50%);
+    opacity :0;
+    text-align: center;
+    transition: visibility 0.8s ease-in-out ,opacity 0.8s linear ;
+}
+
+:local(.cardWrapper){
+    display: flex;
+    justify-content:  space-evenly;
+    padding:1rem;
+    flex-wrap: wrap;
+}

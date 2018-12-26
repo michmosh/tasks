@@ -11,7 +11,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
 Route::get('/api/tasks', 'TasksController@getTasks')->middleware('cors');
