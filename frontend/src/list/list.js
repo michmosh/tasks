@@ -56,7 +56,6 @@ class List extends Component {
                                 value={this.state.newTaskObject.name} 
                                 className={styles.input} 
                                 onChange={(event)=>{
-                    
                                     this.setState({newTaskObject :{name:event.target.value , status:'due'}})
                                 }} 
                             />
@@ -79,8 +78,17 @@ class List extends Component {
                   this.state.data.map((task , index)=>{
                       return (
                           <li key={task.id} className={styles.data}>
-                              <div>
+                              <div style={{position:'relative'}}>
                                   <input value={task.name} className={styles.input} onBlur={(event)=>this.props.handleChange({name:event.target.value},task , index)} onChange={(event)=>this.handleChange({name:event.target.value},task , index)} />
+                                  {/* <i 
+                                    className="fa fa-check-circle" 
+                                    style={{position:'absolute' , 
+                                            top: '10px',
+                                            right:'0' , 
+                                            color:'limegreen'}}
+                                            onClick={()=>this.props.handleChange({name:this.state.data[index].name},task , index)}
+                                    >
+                                    </i> */}
                             </div>
                               <div>
                               {/* {task.status} */}
